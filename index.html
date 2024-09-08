@@ -1,134 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>DeTodoUnPoco</title>
+    <title>Paul Contreras | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/c54628f2d7.js" crossorigin="anonymous"></script>
+    <style>
+        /* Static button styling */
+        #go-home-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            padding: 10px 20px;
+            background-color: #1d4ed8; /* Blue */
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        #go-home-button:hover {
+            background-color: #1e40af; /* Darker blue */
+        }
+
+        #go-home-button i {
+            font-size: 1.2rem;
+        }
+    </style>
 </head>
-<header>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">DeTodoUnPoco</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">DeepBlur</h5>
-              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+<body class="min-h-screen bg-gray-100 text-gray-800">
+    <header class="py-6 px-4 md:px-6 lg:px-8 flex justify-between items-center border-b">
+        <h1 class="text-2xl font-bold">Paul Contreras</h1>
+        <nav class="flex gap-4">
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#skills" class="hover:underline">Skills</a>
+            <a href="#projects" class="hover:underline">Projects</a>
+        </nav>
+    </header>
+
+    <main class="py-12 px-4 md:px-6 lg:px-8 space-y-20">
+        <!-- About Section -->
+        <section id="about" class="max-w-3xl mx-auto text-center">
+            <div class="mb-6">
+                <img src="./static/img/pol_cova_img.jpg" alt="Pol Cova" class="rounded-full w-48 h-48 mx-auto mb-4" />
             </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Apps</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Resources
-                  </a>
-                  <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" href="#">Games</a></li>
-                    <li><a class="dropdown-item" href="#">Communityy</a></li>
-                    <li>
-                      <hr class="dropdown-divider">
-                    </li>
-                    <li><a class="dropdown-item" href="#">DeepBlur social network</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <br>
-              <form action="{{ url_for('login')}}" method="get">
-                <button type="submit" class="btn btn-light">LogIn</button>
-              </form>
-              <br>
-              <form action="{{ url_for('signup')}}" method="get">
-                <button type="submit" class="btn btn-primary">SignUp</button>
-              </form>
-              <br>
-              <form class="d-flex mt-3" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-              </form>
-              <br>
-              <h5>Results of search:</h5>
+            <h2 class="text-3xl font-bold mb-4">About Me</h2>
+            <p class="text-lg mb-6">
+                I'm Paul Contreras, a passionate software engineer with solid experience in backend development, particularly in Python, Go, and C++. I have developed scalable applications, APIs, and tools that solve real-world problems.
+                I enjoy taking part in competitive programming and hackathons. I’m currently a Computer and Electronics Engineering student and an active participant in the ICPC competitive programming team.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="https://github.com/pol-cova" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/paul-contreras-648875247" target="_blank" class="flex items-center gap-2 px-4 py-2 rounded-full bg-blue-700 text-white hover:bg-blue-600 transition">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="mailto:polc394@gmail.com" class="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
             </div>
-          </div>
-        </div>
-      </nav>
-</header>
-<body>
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img src="./static/img/indexImg.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-          </div>
-          <div class="col-lg-6">
-            <h1 class="display-5 fw-bold lh-1 mb-3">Hola somos DeTodoUnPoco...</h1>
-            <p class="lead">Somos un equipo de programación que intenta ayudar a la comunidad!.</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-              <form action="https://github.com/pol-cova/detodounpoco" method="get">
-                <button type="submit" class="btn btn-dark btn-lg px-4 me-md-2"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                  </svg>   Nuesto Github!</button>
-              </form>
-              <form action="#" method="get">
-                <button type="submit" class="btn btn-outline-secondary btn-lg px-4">Proyectos actuales!</button>
-              </form>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
+            <div class="flex flex-wrap justify-center gap-2">
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Python</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Go</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">C++</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Django</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Tailwind CSS</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Git/Github</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Backend development</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">DevOps</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">Cloud</span>
+                <span class="px-3 py-1 text-sm font-medium text-gray-800 bg-gray-200 rounded-full">React</span>
             </div>
-          </div>
-        </div>
-      </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>
-<footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <h5>DeTodoUnPoco</h5>
-        <small class="d-block mb-3 text-muted"> 2023</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary" href="#">Random feature</a></li>
-          <li><a class="link-secondary" href="#">Team feature</a></li>
-          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary" href="#">Another one</a></li>
-          <li><a class="link-secondary" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Resource name</a></li>
-          <li><a class="link-secondary" href="#">Resource</a></li>
-          <li><a class="link-secondary" href="#">Another resource</a></li>
-          <li><a class="link-secondary" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Business</a></li>
-          <li><a class="link-secondary" href="#">Education</a></li>
-          <li><a class="link-secondary" href="#">Government</a></li>
-          <li><a class="link-secondary" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Team</a></li>
-          <li><a class="link-secondary" href="#">Locations</a></li>
-          <li><a class="link-secondary" href="#">Privacy</a></li>
-          <li><a class="link-secondary" href="#">Terms</a></li>
-        </ul>
-      </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-6 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="p-4 border rounded-lg bg-white shadow">
+        <h3 class="font-semibold mb-2 text-xl">Expense Tracker API</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            A personal finance management API featuring user authentication, CRUD operations for transactions, categories, and reporting, built using Django, HTMX.
+        </p>
+        <a href="https://github.com/pol-cova" target="_blank"  class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 transition-transform transform hover:scale-105 shadow-md text-sm">
+            <i class="fab fa-github"></i> GitHub
+        </a>
     </div>
-  </footer>
+    <div class="p-4 border rounded-lg bg-white shadow">
+        <h3 class="font-semibold mb-2 text-xl">GoGinit</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            A CLI tool for quickly initializing Go projects with a structure based on popular web frameworks like Echo and Gin. Inspired by Django-admin and npm init.
+        </p>
+        <a href="https://github.com/pol-cova/GoGinit" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 transition-transform transform hover:scale-105 shadow-md text-sm">
+            <i class="fab fa-github text-lg"></i> GitHub
+        </a>
+    </div>
+    
+    <div class="p-4 border rounded-lg bg-white shadow">
+        <h3 class="font-semibold mb-2 text-xl">Event Management System</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            An API with JWT authentication and event management functionality. The project includes endpoints for creating, editing, and managing events, users, and attendees.
+        </p>
+        <a href="https://github.com/pol-cova/event-system" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 transition-transform transform hover:scale-105 shadow-md text-sm">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
+    <div class="p-4 border rounded-lg bg-white shadow">
+        <h3 class="font-semibold mb-2 text-xl">myVet</h3>
+        <p class="text-sm text-gray-600 mb-4">
+            A comprehensive veterinary management system to handle appointments, pet records, prescriptions, and billing. Built using C++ and React.
+        </p>
+        <a href="https://github.com/pol-cova/myvet" target="_blank" class="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-gray-800 text-white hover:bg-gray-700 transition-transform transform hover:scale-105 shadow-md text-sm">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+    </div>
+</div>
+        </section>
+    </main>
+
+    <!-- Static "Go Home" Button -->
+    <a href="#about" id="go-home-button">
+        <i class="fas fa-home"></i> Go Home
+    </a>
+</body>
+
 </html>
